@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>My</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="wrapper">
+            <img src="images.jpg" alt="cookies">
+            <div class="content">
+                <header>Cookies Constent</header>
+                <p>We use cookies and similar technologies tp help personalize content, tailor and measure ads, and provide a better experience. By clicking accept, you agree to this as outlined in our Cookie Policy.</p>
+                <div class="buttons">
+                    <button class="item" type="button">I understand</button>
+                    <a href="#" class="item">Learn More</a>
+                </div>
+            </div>
+        </div>
+        <script>
+            const cookieBox=document.querySelector(".wrapper"),
+            acceptBtn = cookieBox.querySelector(".buttons button");
+            acceptBtn.onclick=()=>WriteCookie();
+            function WriteCookie() {
+                var now = new Date();now.setTime(now.getTime() + 1 * 3600 * 1000);
+                cookievalue = escape(document.myform.customer.value) + ";"
+                document.cookie="name=" + cookievalue;
+                document.cookie = "expires=" + now.toUTCString() + ";"
+                document.write ("Setting Cookies : " + "name=" + cookievalue );
+            }
+            
+            
+        </script>    
+    </body>
+
+
+
+</html>
