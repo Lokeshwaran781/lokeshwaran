@@ -20,17 +20,19 @@
         <script>
             const cookieBox=document.querySelector(".wrapper"),
             acceptBtn = cookieBox.querySelector(".buttons button");
-            acceptBtn.onclick=()=>WriteCookie();
-            function WriteCookie() {
-                var now = new Date();now.setTime(now.getTime() + 1 * 3600 * 1000);
-                cookievalue = escape(document.myform.customer.value) + ";"
-                document.cookie="name=" + cookievalue;
-                document.cookie = "expires=" + now.toUTCString() + ";"
-                document.write ("Setting Cookies : " + "name=" + cookievalue );
+            acceptBtn.onclick=()=>{
+                document.cookie="CookieBy=MyShopping; max-age="+60*60*24*30;
+                if(document.cookie){
+                    cookieBox.classList.add("hide");
+                }else{
+                    alert("Cookies can't be set");
+                }
             }
-            
-            
+            let checkCookie=document.cookie.indexOf("CookieBy=Shopping");
+            checkCookie != 1? cookieBox.classList.add("hide"):cookieBox.classList.remove("hide");
         </script>    
+            
+                
     </body>
 
 
